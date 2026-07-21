@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+THEME="$1"
+THEME_DIR="$HOME/.config/themes/$THEME"
+
+# check if $THEME is empty, and if $THEME_DIR exists, if not, exits script
+[ -z "$THEME" ] && exit 1
+[ ! -d "$THEME_DIR" ] && exit 1
+
+# set gtk theme, will also have to symlink the settings.ini files, also if blank, default to adwaita
+case "$THEME" in
+    "tokyo_night")      GTK_THEME="Tokyonight-Dark" ;;
+    "catppuccin_mocha") GTK_THEME="Colloid-Dark-Catppuccin" ;;
+    *)                  GTK_THEME="Adwaita-dark" ;;
+esac
+
+# gtk 3, if gsettings does not work
+ln -sf "$THEME_DIR/gtk3/settings.ini" "$HOME/.config/gtk-3.0/settings.ini"
+# same for gtk4:
+ln -sf "$THEME_DIR/gtk4/settings.ini" "$HOME/.config/gtk-4.0/settings.ini"
+gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
+# symlinks to change theme
+# hyprland colours (need to reload as it is not a direct change to the file itself):
+ln -sf "$THEME_DIR/hypr/theme.conf" "$HOME/.config/hypr/look-and-feel.conf" && hyprctl reload
+
+# hyprlock:
+ln -sf "$THEME_DIR/hypr/hyprlock.conf" "$HOME/.config/hypr/hyprlock.conf"
+
+# waybar colours:
+ln -sf "$THEME_DIR/waybar/theme.css" "$HOME/.config/waybar/theme.css"
+
+# rofi colours, maybe style in the future?
+ln -sf "$THEME_DIR/rofi/theme.rasi" "$HOME/.config/rofi/theme.rasi"
+
+# kitty term colours:
+ln -sf "$THEME_DIR/kitty/theme.conf" "$HOME/.config/kitty/theme.conf" && killall -SIGUSR1 kitty
+
+# send notification of success
+notify-send "Theme Applied" "Switched to $THEME"

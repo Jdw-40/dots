@@ -1,0 +1,93 @@
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+$fg-color: #{"@theme_fg_color"};
+$bg-color: #{"@theme_bg_color"};
+@use 'barColours.scss' as *;
+
+window.Bar {
+  background: transparent;
+  color: $main-fg;                  /* Updated: Swapped system default for your palette's text color */
+  font-weight: bold;
+
+  > centerbox {
+    background: $bar-bg;            /* Updated: Changed to translucent background to allow for blur */
+    border-radius: 10px;
+    margin: 8px;
+  }
+
+  button {
+    border-radius: 8px;
+    margin: 2px;
+  }
+}
+
+#workspaces button {
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0em;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+  margin-left: 0em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  margin-right: 0em;
+  color: $main-fg;
+  opacity: 0.2;
+}
+#workspaces button.occupied {
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0em;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+  margin-left: 0em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  margin-right: 0em;
+  color: $main-fg;
+  opacity: 1;
+}
+#workspaces button.focused {
+  background: $wb-act-bg;
+  color: $wb-act-fg;
+  margin-left: 0.3em;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+  margin-right: 0.3em;
+  animation: ws_active 20s ease-in-out infinite alternate;
+  opacity: 1;
+}
+
+#workspaces button:hover {
+  background: $wb-hvr-bg;
+  color: $wb-hvr-fg;
+  opacity: 1;
+  transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+// MPRIS progress bar — hide knob, style trough and fill
+.mpris-button scale trough {
+  min-height: 4px;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.mpris-button scale trough highlight {
+  background-color: $wb-act-bg;
+  border-radius: 2px;
+}
+
+.mpris-button scale trough slider {
+  min-width: 0;
+  min-height: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+// Stat cells at the bottom of the MPRIS popover
+.mpris-stat {
+  border-radius: 8px;
+  padding: 6px 10px;
+}

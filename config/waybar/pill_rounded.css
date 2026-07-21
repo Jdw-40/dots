@@ -1,0 +1,75 @@
+/* Group Styles */
+
+/* ? Full Pill  shape*/
+
+window#waybar.bottom #pill,
+window#waybar.bottom #pill button,
+window#waybar.top #pill,
+window#waybar.top #pill button {
+    border-radius: 10pt 10pt 10pt 10pt;
+    /* border-width: 0 0.411em; */ /*Causes black on edge*/
+}
+
+window#waybar.left #pill,
+window#waybar.left #pill button,
+window#waybar.right #pill,
+window#waybar.right #pill button {
+    border-radius: 10pt 10pt 10pt 10pt;
+    /* border-width: 0; */ /*Causes black on edge*/
+}
+
+window#waybar.top #pill,
+window#waybar.bottom #pill {
+    margin: 0.3em 1em 0.3em 1em;
+}
+
+window#waybar.left #pill,
+window#waybar.right #pill {
+    margin: 1em 0.3em 1em 0.3em;
+}
+
+
+/* Dynamic Stuff */
+/*
+ * " *../../../" Use relative path to navigate $HOME $HOME/
+ */
+/* ? Full Pill  shape*/
+
+window#waybar.bottom #pill menuitem,
+window#waybar.bottom #pill menu,
+window#waybar.bottom #pill tooltip,
+window#waybar.bottom #pill,
+window#waybar.bottom #pill button,
+window#waybar.top #pill menuitem,
+window#waybar.top #pill menu,
+window#waybar.top #pill tooltip,
+window#waybar.top #pill,
+window#waybar.top #pill button {
+    border-radius: 10pt 10pt 10pt 10pt;
+}
+
+window#waybar.left #pill menuitem,
+window#waybar.left #pill menu,
+window#waybar.left #pill tooltip,
+window#waybar.left #pill,
+window#waybar.left #pill button,
+window#waybar.right #pill menuitem,
+window#waybar.right #pill menu,
+window#waybar.right #pill tooltip,
+window#waybar.right #pill,
+window#waybar.right #pill button {
+    border-radius: 10pt 10pt 10pt 10pt;
+}
+
+/* Base HyDE Styles */
+
+* {
+    border-radius: 0em;
+    font-family: "Mononoki Nerd Font Propo";
+    font-size: 0.8rem;
+}
+#pill{
+background-color: @main-bg;
+border-style: solid;
+border-color: @main-bg;
+}

@@ -1,0 +1,38 @@
+{
+  "layer": "top",
+  "height": 28,
+  "modules-left": ["mpd"],
+
+"mpd": {
+    "format": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon} - {stateIcon} {artist} - {album} - {title} [{elapsedTime:%M:%S}/{totalTime:%M:%S}] ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "interval": 60,
+    "consume-icons": {
+        "on": " " // Icon shows only when "consume" is on
+    },
+    "random-icons": {
+        "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+        "on": " "
+    },
+    "repeat-icons": {
+        "on": " "
+    },
+    "single-icons": {
+        "on": " - 1 "
+    },
+    "state-icons": {
+        "paused": "",
+        "playing": ""
+    },
+    "on-click": "mpc toggle",
+    "on-click-middle": "mpc prev",
+    "on-click-right": "mpc next",
+    "on-scroll-up": "mpc seek +1",
+    "on-scroll-down": "mpc seek -1",
+
+    "tooltip-format": "MPD (connected):\n󰐎 Click: play/pause\n󰙤 Middle click: previous\n󰙢 Right click: next\n󰺤 Scroll: seek\n\nNow Playing:\n{title}\nby {artist}\nAlbum: {album}\n{elapsedTime:%M:%S} / {totalTime:%M:%S}",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+    }
+  }
+}

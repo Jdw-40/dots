@@ -1,0 +1,333 @@
+{
+  "clock": {
+    "format-alt": "{:%T - %A, %d %Y}",
+    "format": "{:%T \udb80\udced %d\u00b7%m\u00b7%y}",
+    "tooltip-format": "<span>{calendar}</span>",
+    "interval": 1,
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    },
+  },
+  "hyprland/workspaces#kanji": {
+    "class": "no-margin-padding",
+    "all-outputs": true,
+    "active-only": false,
+    "on-click": "activate",
+    "disable-scroll": false,
+    "on-scroll-up": "hyprctl dispatch workspace -1",
+    "on-scroll-down": "hyprctl dispatch workspace +1",
+    "persistent-workspaces": {},
+    "format": "{icon}",
+    "format-icons": {
+      "1":"一","2":"二","3":"三","4":"四","5":"五","6":"六","7":"七","8":"八","9":"九",
+      "10":"十","11":"十一","12":"十二","13":"十三","14":"十四","15":"十五",
+      "16":"十六","17":"十七","18":"十八","19":"十九","20":"二十",
+      "urgent":"",
+      "default":" "
+    },
+    "workspace-taskbar": {
+        // Enable the workspace taskbar. Default: false
+        "enable": false
+  }
+  },
+  "memory": {
+    "states":{"c":90,"h":60,"m":30},
+    "interval":1,
+    "format":"\udb83\udf86 {used}GB",
+    "format-m":"\udb83\udf85 {used}GB",
+    "format-h":"\udb81\udcc5 {used}GB",
+    "format-c":"\uf421 {used}GB",
+    "format-alt":"\udb83\udf86 {percentage}%",
+    "max-length":10,
+    "tooltip":true,
+    "tooltip-format":"\udb83\udf86 Memory usage: {percentage}%\n\ue266 Used: {used:0.2f}GB / {total:0.2f}GB\n\uf85a Available: {avail:0.2f}GB\n\uf233 Swap used: {swapUsed:0.2f}GB / {swapTotal:0.2f}GB ({swapPercentage}%)"
+  },
+  "network": {
+    "tooltip": true,
+    "format-wifi-alt": "\uf1eb ",
+    "format-ethernet": "\udb80\ude00 ",
+    "tooltip-format":"Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+    "format-linked":"\udb80\ude00 {ifname} (No IP)",
+    "format-disconnected":"\udb81\uddaa ",
+    "tooltip-format-disconnected":"Disconnected",
+    "format":"<span foreground='#99ffdd'>\uf019 {bandwidthDownBytes}</span> <span foreground='#ffcc66'>\uf093 {bandwidthUpBytes}</span>",
+    "interval":2
+  },
+  //tray
+  "tray": {"spacing": 5},
+
+  "battery": {
+    "format":"{icon} {capacity}%",
+    "format-charging":" {capacity}%",
+    "format-plugged":" {capacity}%",
+    "format-alt":"{time} {icon}",
+    "interval": 60,
+    "format-icons":["󰂎","󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"]
+  },
+  "bluetooth": {
+    "format":"",
+    "rotate":0,
+    "format-disabled":"",
+    "format-connected":" {num_connections}",
+    "format-connected-battery":"{icon} {num_connections}",
+    "format-icons":["󰥇","󰤾","󰤿","󰥀","󰥁","󰥂","󰥃","󰥄","󰥅","󰥆","󰥈"],
+    "tooltip-format":"{controller_alias}\n{num_connections} connected",
+    "tooltip-format-connected":"{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected":"{device_alias}",
+    "tooltip-format-enumerate-connected-battery":"{device_alias}\t{icon} {device_battery_percentage}%"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "rotate": 0,
+    "format-icons": {
+      "activated": "󰅶",
+      "deactivated": "󰛊"
+    },
+    "justify": "center",
+    "tooltip": true,
+    "tooltip-format-activated": "<span foreground='#98c379'>\udb80\udd76 Caffeine Mode Active</span>\nPrevents system from going to sleep",
+    "tooltip-format-deactivated": "<span foreground='#e06c75'>\udb81\udeca Caffeine Mode Inactive</span>\nSystem will follow normal power settings"
+  },
+  "custom/launcher": {
+    "format": "",
+    "on-click": "rofi -show drun"
+    },
+"mpd": {
+    "format": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon} - {stateIcon} {title} - {artist} - {album} [{elapsedTime:%M:%S}/{totalTime:%M:%S}] ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "consume-icons": {
+        "on": " " // Icon shows only when "consume" is on
+    },
+    "random-icons": {
+        //"off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+        "on": " "
+    },
+    "repeat-icons": {
+        "on": " "
+    },
+    "single-icons": {
+        "on": " - 1 "
+    },
+    "state-icons": {
+        "paused": "",
+        "playing": ""
+    },
+    "on-click": "mpc toggle",
+    "on-click-middle": "mpc prev",
+    "on-click-right": "mpc next",
+    "on-scroll-up": "mpc seek +1",
+    "on-scroll-down": "mpc seek -1",
+
+    "tooltip-format": "MPD (connected):\n󰐎 Click: play/pause\n󰙤 Middle click: previous\n󰙢 Right click: next\n󰺤 Scroll: seek\n\nNow Playing:\n{title}\nby {artist}\nAlbum: {album}\n{elapsedTime:%M:%S} / {totalTime:%M:%S}",
+    "tooltip-format-disconnected": "MPD (disconnected)",
+    "max-length":85,
+
+},
+
+
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+},
+
+"cpu": {
+    "interval": 1,
+    "format": "{usage}% {icon}",
+    "format-alt": "{usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}{icon16}{icon17}{icon18}{icon19}",
+    "format-icons": ["▁","▂","▃","▄","▅","▆","▇","█"],
+
+},
+"hyprland/window": {
+  "format": "{title}",
+  "tooltip": true
+},
+"pulseaudio": {
+  "scroll-step": 1, // %, can be a float
+  "format": "{volume}% {icon}",
+  "format-bluetooth": "{volume}% {icon} {format_source}",
+  "format-bluetooth-muted": " {icon} {format_source}",
+  //"format-muted": " {format_source}",
+  "format-source": "{volume}% ",
+  "format-source-muted": "",
+  "format-icons": {
+    //"headphone": "",
+    //"hands-free": "",
+    //"headset": "",
+    //"phone": "",
+    //"portable": "",
+    //"car": "",
+    "default": ["", "", ""]
+  },
+  "on-click-left": "pavucontrol"
+},
+
+
+"custom/keybinds": {
+  "format": "",
+  "on-click": "~/.config/rofi/scripts/keybind-hint.sh",
+  "tooltip-format": "show keybindings",
+},
+
+"custom/cliphist": {
+  "format": "{0}",
+  "on-click": "cliphist list | rofi -dmenu -theme ~/.config/rofi/clipboard.rasi",
+  "tooltip-format": "clipboard history",
+},
+
+"custom/expand": {
+  "format": "",
+  "tooltip": false
+},
+
+"group/expand": {
+  "orientation": "inherit",
+  "drawer": {
+    "transition-duration": 600,
+    "transition-left-to-right": false,
+    "click-to-reveal": true
+  },
+  "modules": ["custom/expand", "custom/keybinds", "custom/cliphist", "power-profiles-daemon", "custom/notification"]
+},
+  "custom/notification": {
+    "tooltip": true,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+  "custom/expandPerformance": {
+  "format": "",
+  "tooltip": true,
+  "tooltip-format": "performance"
+},
+  "group/expandPerformance": {
+  "orientation": "inherit",
+  "drawer": {
+    "transition-duration": 700,
+    "transition-left-to-right": true,
+    "click-to-reveal": true
+  },
+  "modules": ["custom/expandPerformance", "cpu", "memory", "network"]
+},
+"power-profiles-daemon": {
+  "format": "{icon}",
+  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+  "tooltip": true,
+  "format-icons": {
+    "default": "",
+    "performance": "",
+    "balanced": "",
+    "power-saver": ""
+  }
+},
+  "custom/expandTray": {
+  "format": "󱊖",
+  "tooltip": true,
+  "tooltip-format": "system tray"
+},
+  "group/expandTray": {
+  "orientation": "inherit",
+  "drawer": {
+    "transition-duration": 600,
+    "transition-left-to-right": true,
+    "click-to-reveal": true,
+  },
+  "modules": ["custom/expandTray", "battery", "bluetooth", "tray"]
+
+},
+  "group/volume": {
+  "orientation": "inherit",
+  "drawer": {
+    "transition-duration": 750,
+    "transition-left-to-right": true,
+    "click-to-reveal": true,
+  },
+  "modules": ["pulseaudio", "pulseaudio/slider"]
+},
+"custom/pacman": {
+    "format": "{}  ",
+    "interval": 3600,                     // every hour
+    "exec": "checkupdates | wc -l",       // # of updates
+    "on-click": "termite -e 'sudo pacman -Syu'; pkill -SIGRTMIN+8 waybar", // update system
+    "signal": 8
+},
+
+//power
+"group/power": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 500,
+        "children-class": "not-power",
+        "transition-left-to-right": false,
+    },
+    "modules": [
+        "custom/power", // First element is the "group leader" and won't ever be hidden
+        "custom/quit",
+        "custom/lock",
+        "custom/windows",
+        "custom/UEFI",
+        "custom/reboot"
+    ]
+},
+"custom/quit": {
+    "format": "󰗼",
+    "tooltip": false,
+    "on-click": "hyprctl dispatch exit"
+},
+"custom/lock": {
+    "format": "󰍁",
+    "tooltip-format": "hyprlock - lock computer",
+    "on-click": "hyprlock"
+},
+"custom/reboot": {
+    "format": "",
+    "tooltip-format": "reboot",
+    "on-click": "reboot"
+},
+"custom/power": {
+    "format": "",
+    "tooltip-format": "left click = shut down now \nright click = show wlogout menu",
+    "on-click-right": "wlogout --layout ~/.config/wlogout/layout --css ~/.config/wlogout/style.css --buttons-per-row 4",
+    "on-click": "shutdown now",
+},
+"custom/windows": {
+  "format": "󰍲",
+  "tooltip-format": "boot into Windows 11",
+  "on-click": "systemctl reboot --boot-loader-entry=windows.conf"
+},
+"custom/UEFI": {
+  "format": "󱁤",
+  "tooltip-format": "UEFI settings",
+  "on-click": "systemctl reboot --firmware-setup"
+}
+}

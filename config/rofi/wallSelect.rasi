@@ -1,0 +1,116 @@
+@theme "~/.config/rofi/theme.rasi"
+
+/*
+ * Wallpaper selector
+ * Centered, large previews, 5 items, horizontal scroll
+ */
+
+configuration {
+    modi:               "drun,run";
+    font:               "mononoki nerd font propo 12";
+    show-icons:         true;
+    hover-select:       true;
+    me-select-entry:    "";
+    me-accept-entry:    "MousePrimary";
+    drun-display-format: "{name}";
+    window-format:      "{w} · {c} · {t}";
+}
+
+// Main Window //
+window {
+    width:              1400px;
+    x-offset:           0px;
+    y-offset:           0px;
+    location:           center;
+    anchor:             center;
+    background-color:   @main-bg;
+    border:             2px;
+    border-radius:      20px;
+    enabled:            true;
+    cursor:             "default";
+}
+
+mainbox {
+    enabled:            true;
+    background-color:   transparent;
+    children:           [ "listbox" ];
+}
+
+listbox {
+    spacing:            10px;
+    padding:            20px;
+    background-color:   transparent;
+    orientation:        vertical;
+    children:           [ "inputbar", "message", "listview" ];
+}
+
+// Search / Input //
+inputbar {
+    enabled:            true;
+    spacing:            0px;
+    padding:            10px;
+    border-radius:      12px;
+    background-color:   @main-bg;
+    text-color:         @main-fg;
+    children:           [ "entry" ];
+}
+
+entry {
+    background-color:   transparent;
+    text-color:         inherit;
+    cursor:             text;
+    placeholder:        "Search Wallpapers...";
+    placeholder-color:  @main-fg;
+}
+
+// The Grid of Wallpapers //
+listview {
+    enabled:            true;
+    columns:            5;
+    lines:              1;
+    scrollbar:          false;
+    spacing:            15px;
+    cycle:              false;
+    fixed-height:       true;
+    fixed-columns:      true;
+    flow:               horizontal;
+    layout:             vertical;
+    background-color:   transparent;
+    cursor:             "default";
+}
+
+// Individual Wallpaper Items //
+element {
+    enabled:            true;
+    padding:            12px;
+    orientation:        vertical;
+    border-radius:      16px;
+    border:             3px;
+    border-color:       transparent;
+    background-color:   transparent;
+    text-color:         @main-fg;
+    cursor:             pointer;
+}
+
+/* Application of your select colours */
+element selected.normal {
+    background-color:   @select-bg;
+    text-color:         @select-fg;
+}
+
+element-icon {
+    size:               240px;
+    horizontal-align:   0.5;
+    border-radius:      12px;
+    background-color:   transparent;
+    cursor:             inherit;
+}
+
+element-text {
+    enabled:            true;
+    horizontal-align:   0.5;
+    padding:            8px 0px 0px 0px;
+    background-color:   transparent;
+    text-color:         inherit;
+    cursor:             inherit;
+}
