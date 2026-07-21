@@ -1,0 +1,17 @@
+$bar-bg: rgba(0, 0, 0, 0);
+
+$main-bg: #1f1f28;
+$main-fg: #DCD7BA;
+
+/*active workspace colours*/
+$wb-act-bg: #957FB8;
+$wb-act-fg: #16161D;
+
+/*inactive with workspaces*/
+$ws-occ-bg: #161d20;
+$ws-occ-fg: #7E9CD8;
+/*hover colours*/
+$wb-hvr-bg: #6A9589;
+$wb-hvr-fg: #C8C093;
+
+$pwrBtnRed: #C34043;

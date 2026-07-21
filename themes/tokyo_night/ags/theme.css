@@ -1,0 +1,19 @@
+
+$bar-bg: rgba(0, 0, 0, 0);  // keep transparent
+$main-bg: #1F1F28;  // background
+$main-fg: #DCD7BA;  // foreground
+
+// active workspace
+$wb-act-bg: #7E9CD8;  // color4 — wave blue
+$wb-act-fg: #1F1F28;  // background on active pill
+
+// occupied / inactive workspaces
+$ws-occ-bg: #16161D;  // color0 — deep black
+$ws-occ-fg: #727169;  // color8 — dim grey
+
+// hover
+$wb-hvr-bg: #7FB4CA;  // color12 — bright blue, softer than active
+$wb-hvr-fg: #1F1F28;  // background
+
+//power button
+$pwrBtnRed: #C34043;

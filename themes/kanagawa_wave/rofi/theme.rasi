@@ -1,0 +1,22 @@
+* {
+    /* Main Background: Kanagawa Base Slate (#1F1F28) with 90% opacity (e6) */
+    main-bg:            #1f1f28e6;
+
+    /* Main Foreground: Fuji White Unbleached Silk text */
+    main-fg:            #dcd7baff;
+
+    /* Main Accent/Border: Authentic Asagao Iris Purple */
+    main-br:            #957fb8ff;
+
+    /* Extra/Secondary Accent: Light Aqua/Cyan with 80% opacity (cc) */
+    main-ex:            #7aa89fcc;
+
+    /* Selection Background: Wisteria Purple from your screen layout */
+    select-bg:          #938aa9ff;
+
+    /* Selection Foreground: Sumi Ink Dark Contrast text */
+    select-fg:          #16161dff;
+
+    separatorcolor:      transparent;
+    border-color:        transparent;
+}

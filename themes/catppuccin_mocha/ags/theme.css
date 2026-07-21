@@ -1,0 +1,14 @@
+/* To enable blur please make sure alpha is greater than 0 */
+$bar-bg: rgba(0, 0, 0, 0.1);
+
+$main-bg: #11111b;
+$main-fg: #cdd6f4;
+
+$wb-act-bg: #b4befe;
+$wb-act-fg: #11111b;
+
+$wb-hvr-bg: #f5c2e7;
+$wb-hvr-fg: #11111b;
+
+$ws-occ-bg: #585b70;
+$pwrBtnRed: #f38ba8;
