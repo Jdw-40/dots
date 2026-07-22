@@ -1,0 +1,77 @@
+// Muichiro Tokito Theme Color Palette
+
+// Red (Deep Crimson — demon mark on face)
+$red-light: #9b1320;
+$red-dark: #9b1320;
+
+// Pink (Flushed Skin — hands/face under strain, lightened from red)
+$pink-light: #c4614f;
+$pink-dark: #c4614f;
+
+// Purple (Deep Blue-Grey)
+$purple-light: #3a4b53;
+$purple-dark: #3a4b53;
+
+// Blue (Muted Teal)
+$blue-light: #4f848e;
+$blue-dark: #4f848e;
+
+// Teal (Highlight)
+$teal-light: #9cd0cb;
+$teal-dark: #9cd0cb;
+
+// Green (Aquamarine)
+$green-light: #9cd0cb;
+$green-dark: #9cd0cb;
+
+// Yellow (Sword Guard Gold)
+$yellow-light: #ca9c4b;
+$yellow-dark: #ca9c4b;
+
+// Orange (Skin Tone / Light Peach)
+$orange-light: #f4dec6;
+$orange-dark: #f4dec6;
+
+// Grey (Banded — background is $grey-700)
+$grey-050: #9cd0cb; // Soft Mist Teal — brightest foreground
+$grey-100: #9cd0cb;
+$grey-150: #9cd0cb;
+
+$grey-200: #4f848e; // Muted Teal-Grey
+$grey-250: #4f848e;
+$grey-300: #4f848e;
+
+$grey-350: #3a636f; // Mid-dark teal
+$grey-400: #3a636f;
+$grey-450: #3a636f;
+
+$grey-500: #3a4b53; // Deep Blue-Grey
+$grey-550: #3a4b53;
+$grey-600: #3a4b53;
+
+$grey-650: #161d20; // Background — Cold Blue-Charcoal
+$grey-700: #161d20;
+$grey-750: #161d20;
+
+$grey-800: #161d20;
+$grey-850: #161d20;
+$grey-900: #161d20;
+$grey-950: #161d20;
+
+// White (Brightest foreground — Soft Mist Teal)
+$white: #ECECEC;
+
+// Black (Background — Cold Blue-Charcoal)
+$black: #2F3237;
+
+// Button (Matches background, Tokyo Night style)
+$button-close: #2F3237;
+$button-max: #2F3237;
+$button-min: #2F3237;
+
+// Link (Bright hair teal highlight)
+$links: #9cd0cb;
+
+// Theme
+$default-light: $teal-light;
+$default-dark: $teal-dark;
