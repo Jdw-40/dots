@@ -1,0 +1,13 @@
+[Unit]
+Description=mpd2mpris - Music Player Daemon D-Bus bridge
+ConditionUser=!root
+ConditionUser=!@system
+
+[Service]
+Type=dbus
+BusName=org.mpris.MediaPlayer2.mpd
+Restart=on-failure
+ExecStart=/home/mrjw/.local/bin/mpd2mpris --use-journal
+
+[Install]
+WantedBy=default.target
